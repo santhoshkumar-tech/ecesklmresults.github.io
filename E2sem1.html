@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <title>ECE E2 SEM-1 | Score</title>
+</head>
+
+<style>
+
+body{
+    background-color: rgb(181, 224, 215);
+}
+.btn{
+    margin: 10px;
+}
+.col-form-label{
+    font-weight: bold;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+}
+span{
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-weight: bold;
+  font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+#cgpa, #percent{
+color: green;
+}
+#output{
+margin: auto;
+width: 50%;
+padding: 5px;
+display: none;
+}
+section{
+
+width: 100%;
+display: flex;
+padding-left: 0.5vh;
+padding-right: 0.5vh;
+padding-top: 1vh;
+align-items: center;
+
+} 
+</style>
+
+
+
+<body>
+    <h1 align="center">E2 SEM-1</h1>
+    <p align="center"><b>Note:</b> Enter your grades according to your result. Enter A/a B/b C/c D/d in subject field. Enter "R/r" in remedial subject field.</p><hr>
+
+    <!-- form data collection block -->
+    <div class="container">
+        <div class="row register">
+            <div class="col-sm-3"> </div>
+              <div class="col-sm-8 reg">
+                <form class="form-horizontal hr">
+
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="idno" class="col-form-label">ID NO:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="idno" class="form-control" maxlength="6" placeholder="ID Number"  required>
+                    </div>
+                  </div>
+ 
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="prv" class="col-form-label">Probability and Random Variables:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="prv" class="form-control" maxlength="2" placeholder="Grade"  required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="aec" class="col-form-label">Analog Electronic Circuits:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="aec" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="dld" class="col-form-label">Digital Logic Design:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="dld" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="dsp" class="col-form-label">Digital Signal Processing:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="dsp" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="cs" class="col-form-label">Control Systems:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="cs" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="aeclab" class="col-form-label">Analog Electronic Circuits Lab:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="aeclab" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="dldlab" class="col-form-label">Digital Logic Design Lab:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="dldlab" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="dsplab" class="col-form-label">Digital Signal Processing Lab:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="dsplab" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div>
+                  <div class="row g-3 align-items-center">
+                    <div class="col-8">
+                      <label for="iotlab" class="col-form-label">Internet of Things Lab:</label>
+                    </div>
+                    <div class="col-4">
+                      <input type="text" id="iotlab" class="form-control" maxlength="2" placeholder="Grade" required>
+                    </div>
+                  </div><br>
+                  
+                  <button type="button" class="btn btn-success" onclick="showoutput()">Get CGPA</button>
+                  <input type="reset" class="btn btn-danger" onclick="closeall()">
+                  <a class="btn btn-secondary" href="index.html" role="button">Go back</a>
+
+                </form>
+            </div>
+        </div>
+    </div><br>
+
+  <!-- output window block -->
+  <div id="output">
+    <p><span>Your CGPA: </span><span id="cgpa"></span></p>
+    <p><span>Your Percentage: </span><span id="percent"></span></p>
+    <button  type="button" class="btn btn-success" onclick="showtable()" id="showresulttable"></button>
+  </div>
+
+
+  <!-- Result table window block -->
+  <section id="showtable" style="display:none ;">
+    <div class="table-responsive col-lg-12" >
+      <table class="table table-striped table-bordered table-dark" id="gradesheet">
+        <thead>
+          <tr>
+            <td colspan="6" align="center"><b>Complete Grade Sheet of Engineering 2nd Year SEM - 1 Results</b></td>
+          </tr>
+          <tr>
+            <td id="idnumber" colspan="2"></td>
+            <td><b>Branch:</b>ECE</td>
+            <td><b>Year:</b>E2 SEM1</td>
+            <td id="result" colspan="2"></td>
+          </tr>
+            
+          <tr class="table-danger">
+            <th scope="col">SUBJECT</th>
+            <th scope="col">CREDITS</th>
+            <th scope="col">GRADE</th>
+            <th scope="col">GRADE POINT</th>
+            <th scope="col">PERCENTAGE</th>
+            <th scope="col">STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Probability and Random Variables</th>
+            <td>3</td>
+            <td id="prvgradeshow"></td>
+            <td id="prvvalueshow"></td>
+            <td id="prvpercentshow"></td>
+            <td id="prvstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Analog Electronic Circuits</th>
+            <td>4</td>
+            <td id="aecgradeshow"></td>
+            <td id="aecvalueshow"></td>
+            <td id="aecpercentshow"></td>
+            <td id="aecstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Digital Logic Design</th>
+            <td>4</td>
+            <td id="dldgradeshow"></td>
+            <td id="dldvalueshow"></td>
+            <td id="dldpercentshow"></td>
+            <td id="dldstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Digital Signal Processing</th>
+            <td>4</td>
+            <td id="dspgradeshow"></td>
+            <td id="dspvalueshow"></td>
+            <td id="dsppercentshow"></td>
+            <td id="dspstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Control Systems</th>
+            <td>3</td>
+            <td id="csgradeshow"></td>
+            <td id="csvalueshow"></td>
+            <td id="cspercentshow"></td>
+            <td id="csstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Analog Electronic Circuits Lab</th>
+            <td>1.5</td>
+            <td id="aeclabgradeshow"></td>
+            <td id="aeclabvalueshow"></td>
+            <td id="aeclabpercentshow"></td>
+            <td id="aeclabstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Digital Logic Design Lab</th>
+            <td>1.5</td>
+            <td id="dldlabgradeshow"></td>
+            <td id="dldlabvalueshow"></td>
+            <td id="dldlabpercentshow"></td>
+            <td id="dldlabstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Digital Signal Processing Lab</th>
+            <td>1.5</td>
+            <td id="dsplabgradeshow"></td>
+            <td id="dsplabvalueshow"></td>
+            <td id="dsplabpercentshow"></td>
+            <td id="dsplabstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row">Internet of Things Lab</th>
+            <td>1.5</td>
+            <td id="iotlabgradeshow"></td>
+            <td id="iotlabvalueshow"></td>
+            <td id="iotlabpercentshow"></td>
+            <td id="iotlabstatus"></td>
+          </tr>
+          <tr>
+            <th scope="row" colspan="5" >Total CGPA:</th>
+            <td><b id="totalcgpa"></b></td>
+          </tr>
+          <tr>
+            <th scope="row" colspan="5" >Total Percentage:</th>
+            <td><b id="totalpercentage"></b></td>
+          </tr>
+          <tr  align="center">
+            <th scope="row" colspan="6"><b>Note: WH: Result on Withheld, AB: Absent and R: Remedial for any queries Mail to: <i>ecell@rguktsklm.ac.in</i></b></th>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    <button type="button" class="btn btn-warning btn-sm" id="exporttopdf">Download</button>
+    <p>(Note:Set the site to Desktop mode for download)</p>
+  </section>
+
+  <!-- Scripts -->
+  <script src="backend/E2sem1.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script type="text/javascript">
+    $("body").on("click", "#exporttopdf", function () {
+        html2canvas($('#gradesheet')[0], {
+            onrendered: function (canvas) {
+                var data = canvas.toDataURL();
+                var docDefinition = {
+                    content: [{
+                        image: data,
+                        width: 500
+                    }]
+                };
+                var id_no= document.getElementById("idno").value;
+                var format="S"+id_no+"_E2SEM1_Gradesheet.pdf";
+                pdfMake.createPdf(docDefinition).download(format);
+            }
+        });
+    });
+  </script>      
+
+</body>
+</html>

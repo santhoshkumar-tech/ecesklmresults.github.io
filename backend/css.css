@@ -1,0 +1,59 @@
+#content{
+    margin: auto;
+    width: 98%;
+    text-align: center;
+    align-items: center;
+    background-color: #e6e6fa;
+}
+#header{
+    background-color: rgb(125, 190, 163);
+}
+#header h3{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    word-spacing: 3px;
+}
+#header h5{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 3px;
+    color: crimson;
+}
+
+#info{
+    padding: 5px;
+    font-weight: 600;
+    
+}
+#subheading{
+    color: darkslategrey;
+}
+.card-body{
+    box-shadow:rgb(38,57,77)0px 20px 30px -10px;
+}
+.card-title{
+    color: #191970;
+    font-weight: bold;
+}
+.card-text{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+#cardsubheading{
+    font-weight:bold ;
+    font-size: large;
+    padding-left: 10px;
+}
+
+
+#feedback{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left:7px ;
+    padding-right:7px ;
+    margin: 7px;
+    font-size:13px;
+}
+p.d-flex{
+    font-size:15px;
+}
+
